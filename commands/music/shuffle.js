@@ -1,0 +1,38 @@
+var Discord = require("discord.js")
+
+module.exports = {
+    name: 'shuffle',
+    aliases: ['sh'],
+    category: 'Music',
+    utilisation: '*shuffle',
+
+    execute(client, message) {
+        if (!message.member.voice.channel) {
+            let embed = new Discord.MessageEmbed()
+            .setDescription(`${client.emotes.error} You're not connected to a voice channel!`)
+            .setColor("E400FF")
+            return message.channel.send(embed);
+        }
+
+        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) {
+            let embed = new Discord.MessageEmbed()
+            .setDescription(`${client.emotes.error} You're in a different voice channel!`)
+            .setColor("E400FF")
+            return message.channel.send(embed);
+        }
+
+        if (!client.player.getQueue(message)) {
+            let embed = new Discord.MessageEmbed()
+            .setDescription(`${client.emotes.error} Queue is currently empty!`)
+            .setColor("E400FF")
+            return message.channel.send(embed);
+        }
+
+
+        client.player.shuffle(message);
+        let embed = new Discord.MessageEmbed()
+            .setDescription(`${client.emotes.success} Shuffled \`${client.player.getQueue(message).tracks.length}\` tracks!`)
+            .setColor("E400FF")
+        return message.channel.send(embed);
+    },
+};
