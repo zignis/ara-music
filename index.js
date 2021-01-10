@@ -31,52 +31,5 @@ for (const file of player) {
     client.player.on(file.split(".")[0], event.bind(null, client));
 };
 
-client.on('ready', msg => {
-    client.channels.cache.get("794533925073846273").messages.fetch("796234463046664262")
-    .then((msg) => {
-        setInterval(function() {
-        let embed = new Discord.MessageEmbed()
-        .setColor("RANDOM")
-        .setFooter("Real-time Data • Destiny")
-        embed.addFields(
-          { name: "Guilds", value: "```" + client.guilds.cache.size + "```", inline: true},
-          { name: "Channels", value:  "```" + client.channels.cache.size + "```", inline: true },
-          { name: "Channels connected", value: "```" + client.voice.connections.size + "```", inline: true},
-          { name: "Users", value:  "```" + client.users.cache.size + "```", inline: true },
-          { name: "API Latency", value:  "```" + client.ws.ping + "```", inline: true },
-        )
-        msg.edit(embed)
-      }, 5000)}
-     ) 
-      }
-    )
-const http = require('http');
-const server = http.createServer((req, res) => {
-  res.writeHead(200);
-  res.end('ok');
-});
-server.listen(3000);
 
 client.login(process.env.TOKEN);
-
-client.on('message', message => {
-  if (message.content === "*restart") {
-   if (message.author.id === process.env.OWNER) {
-     resetBot(message.channel);
-   } else {
-    return message.reply("** this is an owner only command!**")
-   }
-  } 
-});
-
-function resetBot(channel) {
-    channel.send('`WARN: Shutting down...`').then((msg)=>{
-      for (i = 0; i < 11; i++) {
-        msg.edit(`**Launching in ${10 - i}!**`)
-        if (i === 10) {
-          msg.edit(`**Re-launched!**\n**Web-Socket : ${client.ws.ping}**\n\`${client.uptime}\``)
-        }
-      }
-    client.destroy()
-    client.login(process.env.TOKEN)
-    })}
