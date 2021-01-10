@@ -7,7 +7,7 @@ module.exports = {
     utilisation: '*debug',
 
     execute(client, message) {
-        if (message.author.id !== "736304634603503626") {
+        if (message.author.id !== process.env.OWNER) {
             let embed = new Discord.MessageEmbed()
             .setColor("E400FF")
             .setDescription(`This is an owner-only command!`)
