@@ -4,15 +4,13 @@
   "author": "VelociRaptor",
   "version": "1.0.0",
   "scripts": {
-    "start": "pm2 start index.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
     "discord-player": "^3.2.0",
     "discord.js": "^12.5.1",
     "ffmpeg-static": "^4.2.7",
-    "forever": "^3.0.4",
-    "pm2": "^4.5.1",
     "ytdl-core": "^4.4.1"
   }
 }
