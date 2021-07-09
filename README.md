@@ -3,13 +3,13 @@
 A lag-free, feature rich music bot that can search and play tracks from YouTube, or URLs. Does not require `youtube api key`. 
 ## Usage
 ### Adding a new track<br />
-![alt text](https://i.ibb.co/3YCDRVX/NewTrack.png)<br /><br />
+![alt text](https://media.discordapp.net/attachments/863138501515018240/863138542464925696/imageonline-co-roundcorner_3.png)<br /><br />
 ### Playing tracks<br />
-![alt text](https://i.ibb.co/4d2zb6L/Now-Playing.png)<br /><br />
+![alt text](https://media.discordapp.net/attachments/863138501515018240/863138542737162240/imageonline-co-roundcorner_2.png)<br /><br />
 ### Queue<br />
-![alt text](https://i.ibb.co/hcXC0n3/Queue.png)<br /><br />
+![alt text](https://media.discordapp.net/attachments/863138501515018240/863138542959067147/imageonline-co-roundcorner_1.png)<br /><br />
 ### Real-time Filters<br />
-![alt text](https://i.ibb.co/8b4LZ8r/Screenshot-10.png)
+![alt text](https://media.discordapp.net/attachments/863138501515018240/863138543160262656/imageonline-co-roundcorner.png)
 
 
 ## Setup
