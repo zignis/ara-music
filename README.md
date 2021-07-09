@@ -1,10 +1,10 @@
 # AraMusic - Customizable Music Bot
-**Invite [Ara](https://ptb.discord.com/api/oauth2/authorize?client_id=795527817697427476&permissions=8&scope=bot)<br />Support Server [Destiny](https://discord.gg/WeJszjK7pA)**<br />
+
 A lag-free, feature rich music bot that can search and play tracks from YouTube, or URLs. Does not require `youtube api key`. 
 ## Usage
 ### Adding a new track<br />
 ![alt text](https://i.ibb.co/3YCDRVX/NewTrack.png)<br /><br />
-### Tracks playing<br />
+### Playing tracks<br />
 ![alt text](https://i.ibb.co/4d2zb6L/Now-Playing.png)<br /><br />
 ### Queue<br />
 ![alt text](https://i.ibb.co/hcXC0n3/Queue.png)<br /><br />
