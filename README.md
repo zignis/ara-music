@@ -1,5 +1,5 @@
 # AraMusic - Customizable Music Bot
-
+Note: Ara uses old framework, DO NOT USE THIS IN PRODUCTION!
 A lag-free, feature rich music bot that can search and play tracks from YouTube, or URLs. Does not require `youtube api key`. 
 ## Usage
 ### Adding a new track<br />
