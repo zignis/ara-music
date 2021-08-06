@@ -1,4 +1,4 @@
-var Discord = require("discord.js")
+const Discord = require("discord.js")
 
 module.exports = {
     name: 'ping',
@@ -9,8 +9,7 @@ module.exports = {
     execute(client, message) {
         let embed = new Discord.MessageEmbed() 
         .setDescription(`${client.emotes.musicIcon} **| Pong!** \`${client.ws.ping}\``)
-        .setColor("E400FF")
-       message.channel.send(embed)
-        
+        .setColor("E400FF");
+        message.channel.send(embed)
     },
 };
