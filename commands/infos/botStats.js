@@ -1,4 +1,4 @@
-var Discord = require("discord.js")
+const Discord = require("discord.js")
 
 module.exports = {
     name: 'botstats',
@@ -14,20 +14,18 @@ module.exports = {
         .setTitle(`Ara Statistics`)
         .setColor("E400FF")
         Embed.addFields(
-            { name: 'Channels', value: `\`\`\`${client.channels.cache.size}\`\`\``, inline: true},
-            { name: 'Guilds', value: `\`\`\`${client.guilds.cache.size}\`\`\``, inline: true},
-            { name: 'Users', value: `\`\`\`${client.users.cache.size}\`\`\``, inline: true},
+            { name: 'Channels', value: `\`\`\`${client.channels.cache.size.toLocaleString()}\`\`\``, inline: true},
+            { name: 'Guilds', value: `\`\`\`${client.guilds.cache.size.toLocaleString()}\`\`\``, inline: true},
+            { name: 'Users', value: `\`\`\`${client.users.cache.size.toLocaleString()}\`\`\``, inline: true},
             { name: 'RAM usage', value: `\`\`\`${RAM}\`\`\``, inline: true},
             { name: 'API Latency', value: `\`\`\`${client.ws.ping}\`\`\``, inline: true},
             { name: 'Uptime', value: `\`\`\`${uptime}\`\`\``, inline: true},
             { name: 'Developed by', value: `\`\`\`VelociRaptor#5757\`\`\``, inline: true},
             { name: 'Github', value: `\`\`\`HexM7\`\`\``, inline: true},
-            { name: `${client.emotes.partner} • Invite Bot`, value: `[ARA](https://ptb.discord.com/api/oauth2/authorize?client_id=795527817697427476&permissions=8&scope=bot)`},
-            { name: `${client.emotes.partner} • Official Server`, value: `[DESTINY](https://discord.gg/N5GMPZD5sX)`},
         )
         return message.channel.send(Embed)
 
-         function convertMs(mills){
+        function convertMs(mills){
         let roundNumber = mills > 0 ? Math.floor : Math.ceil;
         let days = roundNumber(mills / 86400000),
         hours = roundNumber(mills / 3600000) % 24,
