@@ -7,15 +7,13 @@ module.exports = {
     utilisation: '*debug',
 
     execute(client, message) {
+        let embed = new Discord.MessageEmbed()
+        .setColor("E400FF");
         if (message.author.id !== process.env.OWNER) {
-            let embed = new Discord.MessageEmbed()
-            .setColor("E400FF")
-            .setDescription(`This is an owner-only command!`)
+            embed.setDescription(`This is an owner-only command!`)
             return message.channel.send(embed);
         }
-        let embed = new Discord.MessageEmbed()
-            .setColor("E400FF")
-            .setDescription(`Channels connected - \`${client.voice.connections.size}\``)
+        embed.setDescription(`Channels connected - \`${client.voice.connections.size}\``)
         return message.channel.send(embed);
     },
 };
