@@ -23,3 +23,6 @@ You are allowed to:
 What you are NOT allowed to do:
 - Republish the source code somewhere else.
 - Use the framework for commercial purpose.
+
+## New ideas?
+I'm open to PRs.
