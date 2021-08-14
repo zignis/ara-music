@@ -5,42 +5,32 @@ module.exports = {
     aliases: ['cq'],
     category: 'Music',
     utilisation: '*clear-queue',
-
+    
     execute(client, message) {
+       let embed = new Discord.MessageEmbed().setColor("E400FF");
         if (!message.member.voice.channel) {
-            let embed = new Discord.MessageEmbed()
-            .setDescription(`${client.emotes.error} You're not connected to a voice channel!`)
-            .setColor("E400FF")
+            embed.setDescription(`${client.emotes.error} You're not connected to a voice channel!`);
             return message.channel.send(embed);
         }
-
         if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) {
-            let embed = new Discord.MessageEmbed()
-            .setDescription(`${client.emotes.error} You're in a different voice channel!`)
-            .setColor("E400FF")
+            embed.setDescription(`${client.emotes.error} You're in a different voice channel!`);
             return message.channel.send(embed);
         }
         if (!client.player.getQueue(message)) {
-            let embed = new Discord.MessageEmbed()
-            .setDescription(`${client.emotes.error} Queue is currently empty!`)
-            .setColor("E400FF")
+            embed.setDescription(`${client.emotes.error} Queue is currently empty!`);
             return message.channel.send(embed);
         }
-
         if (client.player.getQueue(message).tracks.length <= 1) {
-            let embed = new Discord.MessageEmbed()
-            .setDescription(`${client.emotes.error} There is only a single song in the queue!`)
-            .setColor("E400FF")
+            embed.setDescription(`${client.emotes.error} There is only a single song in the queue!`);
             return message.channel.send(embed);
         }
         try {
           client.player.clearQueue(message);
-          let embed = new Discord.MessageEmbed()
-              .setDescription(`${client.emotes.success} Queue cleared!`)
-              .setColor("E400FF")
-          return message.channel.send(embed);
+          embed.setDescription(`${client.emotes.success} Queue cleared!`);
+          message.channel.send(embed);
         } catch(e) {
-          return;
+          embed.setDescription(`${client.emotes.error} Caught some errors:\n\`${e}\``);
+          message.channel.send(embed);
         }
     },
 };
