@@ -7,27 +7,19 @@ module.exports = {
     utilisation: '*play [name/URL]',
 
     execute(client, message, args) {
+      let embed = new Discord.MessageEmbed().setColor("E400FF");
         if (!message.member.voice.channel) {
-            let embed = new Discord.MessageEmbed()
-            .setDescription(`${client.emotes.error} You're not connected to a voice channel!`)
-            .setColor("E400FF")
+            embed.setDescription(`${client.emotes.error} You're not connected to a voice channel!`);
             return message.channel.send(embed);
         }
-
         if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) {
-            let embed = new Discord.MessageEmbed()
-            .setDescription(`${client.emotes.error} You're in a different voice channel!`)
-            .setColor("E400FF")
+            embed.setDescription(`${client.emotes.error} You're in a different voice channel!`);
             return message.channel.send(embed);
         }
-
         if (!args[0]) {
-            let embed = new Discord.MessageEmbed()
-            .setDescription(`${client.emotes.error} Specify title of the track!`)
-            .setColor("E400FF")
+            embed.setDescription(`${client.emotes.error} Specify title of the track!`);
             return message.channel.send(embed);
         }
-
         client.player.play(message, args.join(" "), { firstResult: true });
     },
 };
